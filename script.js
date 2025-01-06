@@ -1,14 +1,17 @@
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+const hamburger = document.getElementById('hamburger');
+const menu = document.querySelector('.menu');
 
-    if (name && email && message) {
-        alert('Thank you for your message!');
-        // You could send the data to a server or API here
-    } else {
-        alert('Please fill in all fields.');
+hamburger.addEventListener('click', function () {
+    const hamIcon = this.querySelector('.hamburger-icon');
+    const crossIcon = this.querySelector('.cross-icon');
+    if (hamIcon.style.display === "none") {
+        hamIcon.style.display = "inline-block"
+        menu.style.display = "none"
+        crossIcon.style.display = "none"
+    }
+    else {
+        crossIcon.style.display = "inline-block"
+        hamIcon.style.display = "none"
+        menu.style.display = "block"
     }
 });
